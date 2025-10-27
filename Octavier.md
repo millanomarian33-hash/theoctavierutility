@@ -1,8 +1,8 @@
-  import java.util.InputMismatchException;
+import java.util.InputMismatchException;
    import java.util.Scanner;
    public class Octavier {
    
-  // The entire application is contained within this main class
+    // The entire application is contained within this main class
   // ====== COLOR CONSTANTS (Must be static members of the class) ======
   // ANSI escape codes for coloring the console output.
   public static final String Reset = "\033[0m";
@@ -41,7 +41,7 @@
   private static void bigWelcomeLogo() throws InterruptedException {
       clearScreen();
       
-      System.out.println(Pink);
+   System.out.println(Pink);
       System.out.println("     ╔════════════════════════════════════════════════════════════════╗");
       System.out.println("     ║                   😍 W E L C O M E 😍                         ║");
       System.out.println("     ╚════════════════════════════════════════════════════════════════╝");
@@ -62,15 +62,15 @@
       clearScreen();
       String[] loadingFrames = {
           
-          "[████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒10%]10%", 
+ "[████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒10%]10%", 
           "[██████████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒30%]30%",   // Adjusted frames for smooth transition
           "[████████████████▒▒▒▒▒▒▒▒▒▒50%]50%", 
           "[████████████████████████▒▒80%]80%", 
           "[██████████████████████████100%]100%",  // Fixed typo in 100% frame
           
-      };
+ };
       
-      System.out.println(Cyan + "\n\n Loading, please wait! \n\n" + Reset);
+   System.out.println(Cyan + "\n\n Loading, please wait! \n\n" + Reset);
       for (String frame : loadingFrames) {
           System.out.print("\r" + Pink + "   " + frame + Reset);
           Thread.sleep(200);
@@ -83,7 +83,7 @@
   // **Fix**: Corrected typo from EnterruptedExcemption to InterruptedException.
   private static void startScreen() throws InterruptedException { 
       
-      clearScreen();
+  clearScreen();
       System.out.println(Pink);
       System.out.println("    ╔═══════════════════════════════════════════════╗ ");
       System.out.println("    ║             ✨ M A I N  M E N U ✨           ║ ");
@@ -95,7 +95,7 @@
       System.out.println("    ║                                               ║ ");
       System.out.println("    ╚═══════════════════════════════════════════════╝ " + Reset);
   
-      // Main menu selection loop
+  // Main menu selection loop
       while (!exit) {
           System.out.print("\n" + Pink + "♡ Choose an option: " + Reset);
           try {
@@ -142,7 +142,7 @@
           System.out.println("   ║                                                   ║");
           System.out.println("   ╚═══════════════════════════════════════════════════╝" + Reset);
       
-          System.out.print("\n" + Pink + "♡ Choose an option: " + Reset);
+   System.out.print("\n" + Pink + "♡ Choose an option: " + Reset);
           try {
               int option = sc.nextInt();
               sc.nextLine(); 
@@ -170,7 +170,7 @@
               System.out.print("Enter first number: ");
               double a = Double.parseDouble(sc.nextLine());
 
-              System.out.print("Enter operator (+, -, *, /): ");
+   System.out.print("Enter operator (+, -, *, /): ");
               String opStr = sc.nextLine();
               if (opStr.isEmpty()) { 
                    System.out.println(Red + "Error: Operator cannot be empty." + Reset);
@@ -179,12 +179,11 @@
               }
               char op = opStr.charAt(0);
 
-              System.out.print("Enter second number: ");
+   System.out.print("Enter second number: ");
               double b = Double.parseDouble(sc.nextLine());
+  double result;
 
-              double result;
-
-              switch (op) {
+  switch (op) {
                   case '+':
                       result = a + b;
                       break;
@@ -208,12 +207,12 @@
                       continue;
               }
 
-              System.out.println(Green + "Answer: " + result + Reset);
+  System.out.println(Green + "Answer: " + result + Reset);
           } catch (NumberFormatException e) {
               System.out.println(Red + "Error: Invalid number input. Please enter valid numbers." + Reset);
           }
           
-          System.out.print(Yellow + "\nPress [R] to calculate again, or [B] to go back: " + Reset);
+ System.out.print(Yellow + "\nPress [R] to calculate again, or [B] to go back: " + Reset);
           String choice = sc.nextLine().trim().toLowerCase();
           if (choice.equals("b")) {
               inCalculator = false;
@@ -231,24 +230,22 @@
           System.out.print("Enter the radius of the circle: ");
           double radius = Double.parseDouble(sc.nextLine());
 
-          if (radius < 0) {
+  if (radius < 0) {
               System.out.println(Red + "Error: Radius cannot be negative." + Reset);
               Thread.sleep(1500);
               continue;
           }
 
-          double area = Math.PI * radius * radius;
+ double area = Math.PI * radius * radius;
           double circumference = 2 * Math.PI * radius;
-
-          System.out.println(Green + "\nResults (for radius " + radius + "):" + Reset);
+  System.out.println(Green + "\nResults (for radius " + radius + "):" + Reset);
           System.out.printf(Cyan + "  - Area: %.2f%n" + Reset, area);
           System.out.printf(Cyan + "  - Circumference: %.2f%n" + Reset, circumference);
-
-      } catch (NumberFormatException e) {
+  } catch (NumberFormatException e) {
           System.out.println(Red + "Error: Invalid input. Please enter a valid number for the radius." + Reset);
       }
-      
-      System.out.print(Yellow + "\nPress [R] to calculate again, or [B] to go back: " + Reset);
+     
+  System.out.print(Yellow + "\nPress [R] to calculate again, or [B] to go back: " + Reset);
       String choice = sc.nextLine().trim().toLowerCase();
       if (choice.equals("b")) {
           inAreaCircum = false;
